@@ -1,4 +1,7 @@
 import {gql} from 'apollo-server-express';
+import ingredientSchema from './ingredientSchema.js';
+import nutrientsSchema from './nutrientsSchema.js';
+import recipeSchema from './recipeSchema.js';
 import userSchema from './userSchema.js';
 
 const linkSchema = gql`
@@ -10,4 +13,10 @@ const linkSchema = gql`
   }
 `;
 
-export default [linkSchema, userSchema];
+export default [
+  linkSchema,
+  userSchema,
+  recipeSchema,
+  ingredientSchema,
+  nutrientsSchema,
+];
