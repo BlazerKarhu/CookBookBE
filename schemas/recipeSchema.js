@@ -7,18 +7,17 @@ export default gql`
     addRecipe: Recipe
   }
 
-  extend type Mutation {
-    addRecipe(
-      recipeName: String!
-      instructions: [String]
-      ingredients: [ID]
-    ): Recipe
-  }
-
   type Recipe {
     id: ID!
     recipeName: String!
-    ingredients: [Ingredient]
     instructions: [String]
+    ingredients: [Ingredient]
+  }
+  extend type Mutation {
+    addRecipe(
+      recipeName: String!
+      instructions: String
+      ingredients: [ID]
+    ): Recipe
   }
 `;

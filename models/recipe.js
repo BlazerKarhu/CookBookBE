@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const recipeSchema = new Schema({
   recipeName: {type: String, require: true},
   instructions: [{type: String}],
-  nutrientsID: {type: mongoose.Types.ObjectId, ref: 'Ingredient'},
+  ingredients: [{type: mongoose.Types.ObjectId, ref: 'Ingredient'}],
 });
 
 export default mongoose.model('Recipe', recipeSchema);
