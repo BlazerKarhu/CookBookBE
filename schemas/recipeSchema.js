@@ -12,12 +12,14 @@ export default gql`
     recipeName: String!
     instructions: [String]
     ingredients: [Ingredient]
+    category: String
   }
   extend type Mutation {
     addRecipe(
       recipeName: String!
       instructions: String
       ingredients: [ID]
+      category: String
     ): Recipe
   }
 `;

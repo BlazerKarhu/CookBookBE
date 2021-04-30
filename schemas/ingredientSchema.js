@@ -9,9 +9,14 @@ export default gql`
   type Ingredient {
     id: ID
     ingredientName: String!
+    grams: Float
     nutrients: Nutrients
   }
   extend type Mutation {
-    addIngredient(ingredientName: String!, nutrients: ID): Ingredient
+    addIngredient(
+      ingredientName: String!
+      nutrients: ID
+      grams: Float
+    ): Ingredient
   }
 `;

@@ -7,9 +7,7 @@ export default {
         console.log('recipes query', args);
         return Recipe.find().populate({
           path: 'ingredients',
-          populate: {
-            path: 'nutrientsID',
-          },
+          populate: {path: 'nutrients'},
         });
       } catch (error) {
         console.error(error);
