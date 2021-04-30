@@ -44,7 +44,10 @@ dotenv.config();
     server.applyMiddleware({app});
 
     process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-    if (process.env.NODE_ENV === 'production') {
+    app.listen(3000, () => {
+      console.log('Go to http://localhost:3000/graphql to run queries!');
+    });
+    /*if (process.env.NODE_ENV === 'production') {
       production(app, 3000);
       console.log('production');
     } else {
@@ -57,7 +60,7 @@ dotenv.config();
       console.log(
         `🚀 Server ready at http://localhost:3000${server.graphqlPath}ql`
       );
-    }
+    }*/
   } catch (e) {
     console.error('server error: ' + e.message);
   }
